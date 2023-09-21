@@ -1,4 +1,4 @@
-package dev.jean.model;
+package dev.jean.domain.model;
 
 import jakarta.persistence.*;
 
