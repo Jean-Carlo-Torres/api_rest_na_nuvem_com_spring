@@ -1,12 +1,28 @@
 package dev.jean.model;
 
-public class Card {
-    private String number;
-    private double limit;
+import jakarta.persistence.*;
 
-    public Card(String number, double limit) {
-        this.number = number;
-        this.limit = limit;
+import java.math.BigDecimal;
+
+@Entity(name = "tb_card")
+public class Card {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(unique = true)
+    private String number;
+
+    @Column(name = "available_limit", scale = 13, precision = 2)
+    private BigDecimal limit;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNumber() {
@@ -17,11 +33,11 @@ public class Card {
         this.number = number;
     }
 
-    public double getLimit() {
+    public BigDecimal getLimit() {
         return limit;
     }
 
-    public void setLimit(double limit) {
+    public void setLimit(BigDecimal limit) {
         this.limit = limit;
     }
 }

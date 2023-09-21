@@ -1,27 +1,8 @@
 package dev.jean.model;
 
-public class News {
-    private String icon;
-    private String description;
+import jakarta.persistence.Entity;
 
-    public News(String icon, String description) {
-        this.icon = icon;
-        this.description = description;
-    }
+@Entity(name = "tb_news")
+public class News extends BaseItem{
 
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
 }
